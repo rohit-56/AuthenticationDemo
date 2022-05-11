@@ -28,5 +28,14 @@ Now to authenticate based on token adding jwt dependency in build.gradle file.
 
   - Create JWTUtil class for all methods regarding token-expiry , getusername,etc.
   - Create AuthenticationRequest and AuthenticationResponse classes
-   
+  - And Configure http request on SecurityConfig to authenticate every request.
+
+
+# Step 3
+
+Intercept all incoming requests
+
+  - Create JWTFilter class which extends OncePerRequestFilter and override doFilter method where 
+     - extract username from token
+     - and validate it and set in execution context
    
